@@ -23,7 +23,7 @@
 
 - Клонируйте репозиторий
 ```
-git clone https://github.com/chatbotdesigntg/backend.git
+git clone git@github.com:monter220/test_antipoff-it.git
 ```
 - Перейдите в каталог с проектом
 ```
