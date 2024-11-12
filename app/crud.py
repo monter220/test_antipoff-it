@@ -2,8 +2,8 @@ from typing import TypeVar
 from sqlalchemy import select, false
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from app.core.db import Base
-from app.models import History, Cadaster
+from core.db import Base
+from models import History, Cadaster
 
 
 ModelType = TypeVar('ModelType', bound=Base)

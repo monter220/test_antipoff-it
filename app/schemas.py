@@ -2,7 +2,7 @@ from datetime import datetime
 
 from pydantic import BaseModel, Extra, validator
 
-from app.core.utils import check_cadastr_number
+from core.utils import check_cadastr_number
 
 
 class CadastrBD(BaseModel):

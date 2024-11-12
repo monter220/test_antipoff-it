@@ -2,9 +2,9 @@ from fastapi import APIRouter, Depends, status
 from sqlalchemy.ext.asyncio import AsyncSession
 from fastapi.responses import RedirectResponse
 
-from app.core.db import get_async_session
-from app.crud import history_crud, cadastr_crud
-from app.schemas import HistoryDB, CadastrGet, CadastrCreate
+from core.db import get_async_session
+from crud import history_crud, cadastr_crud
+from schemas import HistoryDB, CadastrGet, CadastrCreate
 
 
 router = APIRouter()

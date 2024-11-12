@@ -12,8 +12,8 @@ from sqlalchemy import (
     Text,
 )
 
-from app.core.db import Base
-from app.core.utils import check_cadastr_number
+from core.db import Base
+from core.utils import check_cadastr_number
 
 
 class Cadaster(Base):
