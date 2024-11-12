@@ -33,6 +33,13 @@ class CadastrBD(BaseModel):
 class CadastrCreate(CadastrBD):
 
     class Config:
+        schema_extra = {
+            'example': {
+                'cadastr_number': '47:14:1203001:814',
+                'latitude': 112.5,
+                'longitude': 63.8,
+            }
+        }
         extra = Extra.forbid
         orm_mode = True
 

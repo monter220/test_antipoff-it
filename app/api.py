@@ -1,3 +1,6 @@
+import time
+import random
+
 from fastapi import APIRouter, Depends, status
 from sqlalchemy.ext.asyncio import AsyncSession
 from fastapi.responses import RedirectResponse
@@ -12,6 +15,8 @@ router = APIRouter()
 
 @router.get(
     '/history',
+    tags=['writes into the history table'],
+    summary='Получение истории операций',
     response_model=list[HistoryDB],
     response_model_exclude_none=True,
 )
@@ -23,11 +28,12 @@ async def get_history(
 
 @router.get(
     '/ping',
+    tags=['writes into the history table'],
+    summary='Проверка доступности сервиса',
 )
 async def get_ping(
         session: AsyncSession = Depends(get_async_session),
 ):
-    # bool(random.getrandbits(1))
     answer = 'Сервис доступен'
     await history_crud.create(
         session=session,
@@ -40,6 +46,8 @@ async def get_ping(
 
 @router.post(
     '/query',
+    tags=['writes into the history table'],
+    summary='Отправка запроса',
     response_model=CadastrGet,
 )
 async def post_query(
@@ -52,12 +60,15 @@ async def post_query(
         endpoint='/query',
         type='/post'
     )
+    time.sleep(random.randint(0,60))
     return RedirectResponse(
         f'/result/{result}', status_code=status.HTTP_303_SEE_OTHER)
 
 
 @router.get(
     '/result/{result}',
+    tags=["don't writes into the history table"],
+    summary='Получение ответа на запрос',
     response_model_exclude_none=True,
 )
 async def get_query(
