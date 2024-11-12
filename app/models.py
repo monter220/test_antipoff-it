@@ -16,7 +16,6 @@ from app.core.db import Base
 from app.core.utils import check_cadastr_number
 
 
-
 class Cadaster(Base):
     cadastr_number = Column(String(17), unique=False, nullable=False)
     latitude = Column(Float, unique=False, nullable=False)

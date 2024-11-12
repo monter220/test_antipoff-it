@@ -1,5 +1,3 @@
-import random
-
 from typing import TypeVar
 from sqlalchemy import select, false
 from sqlalchemy.ext.asyncio import AsyncSession

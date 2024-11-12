@@ -1,7 +1,6 @@
 from datetime import datetime
-from typing import Optional
 
-from pydantic import BaseModel, Extra, PositiveInt, NonNegativeInt, validator
+from pydantic import BaseModel, Extra, validator
 
 from app.core.utils import check_cadastr_number
 
